@@ -4,11 +4,10 @@ import threading
 SERVER_IP = ""
 SERVER_PORT = 5005
 
-# Stop event when server disconnects or error occurs
+# Stop event for when server disconnects or error occurs
 stop = threading.Event()
 
 def receive_messages(sock):
-	global running
 
 	while True:
 		try:
@@ -26,8 +25,6 @@ def receive_messages(sock):
 	print(f"Message Receiver Thread Quitting")
 
 def main():
-	global running
-
 	# 1: Create a TCP client socket
 	client_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 
