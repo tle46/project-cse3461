@@ -69,7 +69,7 @@ while server_running:
         print(f"Connection from {client_address} has been established!")
 
         # Request and receieve the username from the client
-        client_socket.send("Please enter your username: ".encode())
+        client_socket.send("Server Prompt:\n Please enter your username: ".encode())
         username = client_socket.recv(1024).decode()
         print(f"Username received: {username}")
 
@@ -86,4 +86,5 @@ while server_running:
         server_running = False
 
 # Close the server socket
+
 server_socket.close()
